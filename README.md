@@ -17,7 +17,7 @@ Requires Python 3.11+.
 
 ```bash
 # 1. Set your LLM API key
-export ANTHROPIC_API_KEY="sk-..."
+export OPENAI_API_KEY="..."
 
 # 2. Run evaluation
 ethibench evaluate ./my_experiment --dataset path/to/dataset.yaml
