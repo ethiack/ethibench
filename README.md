@@ -63,15 +63,6 @@ ethibench evaluate <experiment_dir> --dataset <dataset.yaml> --force
 7. Plots — generates PNG charts in `evaluation_outputs/plots/`.
 8. Summary — writes `evaluation_outputs/summary.md`.
 
-### `ethibench convert-report`
-
-Converts a free-form Markdown security report to structured `findings.jsonl`.
-
-```bash
-ethibench convert-report <report.md> [--output findings.jsonl]
-```
-
-Uses an LLM to extract individual vulnerability findings from the report.
 
 ### `ethibench analyze`
 
