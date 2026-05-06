@@ -29,6 +29,12 @@ python matching_experiments/run_experiment.py --models haiku-4.5 --replicates 5
 
 # Add more replicates later (accumulates with previous runs)
 python matching_experiments/run_experiment.py --models haiku-4.5 --replicates 2
+
+# Analyze agreement between LLM and human annotations (no LLM calls)
+python matching_experiments/run_experiment.py --analyze
+
+# Regenerate plots only
+python matching_experiments/run_experiment.py --plot-only
 ```
 
 ## Available Models
@@ -53,8 +59,10 @@ LangSmith tracing is enabled by default (project: `matching-experiments`). Set `
 
 ## Output
 
-- `results/<model-key>.json` — per-model results with all replicates and summary (mean/std)
-- `results/comparison.png` — grouped bar chart comparing all models against the human baseline
+- `results/<model-key>.json` — per-model results with all replicates, summary (mean/std), and per-finding TP/FP UUIDs
+- `results/comparison.png` — combined plot: TP/FP counts + agreement with human (when data available)
+- `results/agreement.png` — standalone agreement plot (accuracy, Cohen's κ, confusion breakdown)
+- `results/agreement_metrics.json` — per-model and per-finding agreement metrics vs human annotations
 
 ## Replicates
 

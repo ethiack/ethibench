@@ -57,7 +57,7 @@ ethibench evaluate <experiment_dir> --dataset <dataset.yaml> --force
 1. Collects findings — scans target subdirectories (folder name = `target_id`), loads each `findings.jsonl`, assigns `subset_name` from dataset YAML.
 2. Raw LLM matching — compares every finding against every ground truth entry using an LLM.
 3. Bipartite matching — Hungarian algorithm to find optimal 1-to-1 assignment.
-4. Metrics — computes TP, FP, FN, duplicates, precision, recall, F1, F0.5 per subset.
+4. Metrics — computes TP, FP, FN, duplicates, precision, recall, F1, F0.5, and severity score per subset.
 5. Aggregation — averages across replicates and runs, computes weighted/unweighted overall.
 6. Cost metrics — loads per-target `metrics.json` if present, aggregates cost/token/duration.
 7. Plots — generates PNG charts in `evaluation_outputs/plots/`.
@@ -129,6 +129,9 @@ ethibench compare exp-extra/ --parent-dir all-experiments/ --output-dir comparis
 - `comparison.json` — raw comparison data for all experiments.
 - `plots/` — side-by-side PNG charts.
 - `comparison.md` — Markdown summary.
+- `pairwise_comparison.md` — pairwise A/B statistical comparison (top 4 experiments by F1).
+- `pairwise_comparison.tex` — LaTeX version of the pairwise table.
+- `cumulative-analysis/` — (if cumulative data exists) delta analysis comparing averaged vs cumulative F1, plus cumulative comparison plots.
 
 ## File Formats
 
@@ -147,7 +150,7 @@ Each `findings.jsonl` lives inside a target directory — the directory name det
 One JSON object per line.
 
 ```json
-{"id": "gt-001", "name": "SQL Injection", "subset_name": "MyApp", "target_id": "app", "category": "CWE-89", "description": "Database query vulnerability"}
+{"id": "gt-001", "name": "SQL Injection", "subset_name": "MyApp", "target_id": "app", "category": "CWE-89", "description": "Database query vulnerability", "cvss": 9.8}
 ```
 
 ### Dataset YAML
@@ -167,9 +170,9 @@ All configuration is via environment variables:
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `ETHIBENCH_LLM_PROVIDER` | `anthropic` | LLM provider: `openai`, `anthropic`, `ollama`, `gemini` |
-| `ETHIBENCH_LLM_MODEL` | `claude-haiku-4-5` | Model name |
-| `ETHIBENCH_TEMPERATURE` | `0.5` | Sampling temperature |
+| `ETHIBENCH_LLM_PROVIDER` | `openai` | LLM provider: `openai`, `anthropic`, `ollama`, `gemini` |
+| `ETHIBENCH_LLM_MODEL` | `gpt-5.4-mini` | Model name |
+| `ETHIBENCH_TEMPERATURE` | `0.3` | Sampling temperature |
 | `ETHIBENCH_API_URL` | — | Custom API endpoint (for Ollama or compatible APIs) |
 | `ETHIBENCH_CONCURRENCY` | `50` | Max concurrent LLM calls |
 | `ETHIBENCH_MAX_RETRIES` | `5` | Max retries per LLM call |
@@ -326,6 +329,7 @@ evaluation_outputs/cumulative-analysis/
    - Recall = TP / (TP + FN)
    - F1 = 2 × P × R / (P + R)
    - F0.5 = 1.25 × P × R / (0.25 × P + R)
+   - Severity Score = sum of CVSS-based points for each TP (None/0→0, ≤3.9→3, ≤6.9→15, ≤8.9→30, >8.9→50)
 
 ## Architecture
 
@@ -341,6 +345,7 @@ src/ethibench/
 ├── metrics.py          # Per-target cost/token/duration metrics
 ├── convert_report.py   # Report → findings conversion
 ├── cumulative_analysis.py  # Cross-run cumulative analysis + overlap
+├── pairwise.py         # Pairwise A/B statistical comparison (t-test, Cohen's d)
 ├── plots.py            # PNG chart generation (eval, cumulative, comparison)
 ├── report.py           # Markdown summary generation
 └── analysis/
