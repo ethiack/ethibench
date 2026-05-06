@@ -9,9 +9,7 @@ description = "Evaluation pipeline for security testing tools against ground tru
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-authors = [
-    { name = "Ethiack", email = "support@ethiack.com" },
-]
+
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
