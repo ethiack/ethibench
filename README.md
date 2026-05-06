@@ -8,10 +8,10 @@ Evaluation pipeline for security testing tools. Compares tool findings against g
 ## Installation
 
 ```bash
-pip install -e .
+poetry install
 ```
 
-Requires Python 3.11+.
+Requires Python 3.11+ and Poetry installed.
 
 ## Quick Start
 
