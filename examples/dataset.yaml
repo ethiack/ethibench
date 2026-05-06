@@ -1,0 +1,18 @@
+# Example dataset configuration for ethibench.
+# Each entry defines a subset of targets to evaluate.
+# The target_id must match the directory name under each run folder.
+
+- subset: Vulnbank
+  weight: 1.0
+  targets:
+    - target_id: vuln-bank
+
+- subset: PAYGoat
+  weight: 1.0
+  targets:
+    - target_id: paygoat
+
+- subset: XBEN
+  weight: 1.0
+  targets:
+    - target_id: xben-090

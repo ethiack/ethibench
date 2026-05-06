@@ -1,0 +1,12 @@
+{
+  "duration_seconds": 2373.9,
+  "start_time": "2026-04-22T17:57:31.642083+00:00",
+  "end_time": "2026-04-22T18:37:05.542427+00:00",
+  "input_tokens": 1062128,
+  "output_tokens": 169690,
+  "total_tokens": 1231818,
+  "cache_read_tokens": 321536,
+  "total_cost": 4.477214,
+  "output_cost": 2.54535,
+  "input_cost": 1.931864
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "true_positives": 11,
+    "false_positives": 2,
+    "false_negatives": 49,
+    "duplicates": 2,
+    "precision": 0.8461538461538461,
+    "recall": 0.18333333333333332,
+    "f1_score": 0.3013698630136986,
+    "f05_score": 0.49107142857142855,
+    "severity_score": 293,
+    "cwe_coverage": 7,
+    "subset_name": "Vulnbank"
+  }
+]

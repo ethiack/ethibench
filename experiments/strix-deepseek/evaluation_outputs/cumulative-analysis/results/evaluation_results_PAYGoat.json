@@ -1,0 +1,15 @@
+[
+  {
+    "true_positives": 2,
+    "false_positives": 0,
+    "false_negatives": 26,
+    "duplicates": 0,
+    "precision": 1.0,
+    "recall": 0.07142857142857142,
+    "f1_score": 0.13333333333333333,
+    "f05_score": 0.2777777777777778,
+    "severity_score": 60,
+    "cwe_coverage": 1,
+    "subset_name": "PAYGoat"
+  }
+]

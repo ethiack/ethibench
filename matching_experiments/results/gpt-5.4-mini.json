@@ -1,0 +1,28 @@
+{
+  "model_key": "gpt-5.4-mini",
+  "model_name": "gpt-5.4-mini",
+  "display_name": "GPT 5.4 Mini",
+  "provider": "openai",
+  "n_replicates": 3,
+  "replicates": [
+    {
+      "true_positives": 23,
+      "false_positives": 25
+    },
+    {
+      "true_positives": 24,
+      "false_positives": 25
+    },
+    {
+      "true_positives": 24,
+      "false_positives": 25
+    }
+  ],
+  "summary": {
+    "true_positives_mean": 23.666666666666668,
+    "true_positives_std": 0.5773502691896257,
+    "false_positives_mean": 25,
+    "false_positives_std": 0.0
+  },
+  "last_updated": "2026-05-05T16:24:22.284074"
+}

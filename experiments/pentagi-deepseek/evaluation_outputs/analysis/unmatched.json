@@ -1,0 +1,37 @@
+{
+  "PAYGoat": {
+    "count": 5,
+    "uuids": [
+      "3e35d4c3-4182-4d76-8fa5-4fa8e8668a02",
+      "142eb798-9bed-410e-9b71-57b45d5b9e39",
+      "052dba66-b989-4da6-9383-03bb47340ed0",
+      "45d10c86-39c1-427d-aeb2-5ea0a20d2262",
+      "1a1cdc4f-cca9-4107-a7a2-1f5c39d8f4ff"
+    ]
+  },
+  "Vulnbank": {
+    "count": 6,
+    "uuids": [
+      "106ebda4-4d47-4103-9b9a-efc3a04265f5",
+      "fe31ddaa-bff4-4a5f-81a8-540c636dffcc",
+      "67f048be-b332-4468-b728-7c8245ff8d7c",
+      "74ac9ed6-43c6-40dc-b864-3f66c0e4e6fb",
+      "6f44da64-5d99-4093-9239-9145de3eb140",
+      "c01e912c-7130-4831-8b27-9913b36a1ab7"
+    ]
+  },
+  "XBEN": {
+    "count": 9,
+    "uuids": [
+      "50256e92-e838-4d72-b760-9657e344713e",
+      "099f5818-c5bc-4e81-8285-ad0833c86c72",
+      "7d3958a7-64ec-41ad-b16f-50d9bb50c034",
+      "ae306ae0-7195-4521-a67f-e88a004cca3e",
+      "dbdd64f5-15a5-49ff-8584-b835c93a2484",
+      "aca8c452-d1d1-4f77-aea9-587980ed3f67",
+      "956b9de0-ce9e-4c00-beec-ab8b398af2c9",
+      "e674c5f9-6a09-46fb-b4b7-861da6ac0270",
+      "582e97ab-d883-4095-bbf6-c0efcd0225d0"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "model_key": "qwen-3.6-plus",
+  "model_name": "accounts/fireworks/models/qwen3p6-plus",
+  "display_name": "Qwen 3.6 Plus",
+  "provider": "fireworks",
+  "n_replicates": 3,
+  "replicates": [
+    {
+      "true_positives": 26,
+      "false_positives": 22
+    },
+    {
+      "true_positives": 27,
+      "false_positives": 21
+    },
+    {
+      "true_positives": 26,
+      "false_positives": 22
+    }
+  ],
+  "summary": {
+    "true_positives_mean": 26.333333333333332,
+    "true_positives_std": 0.5773502691896257,
+    "false_positives_mean": 21.666666666666668,
+    "false_positives_std": 0.5773502691896257
+  },
+  "last_updated": "2026-05-06T12:32:18.453782"
+}

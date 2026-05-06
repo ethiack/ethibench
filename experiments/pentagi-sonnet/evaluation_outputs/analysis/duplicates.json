@@ -1,0 +1,33 @@
+{
+  "PAYGoat": {
+    "count": 8,
+    "uuids": [
+      "6fa23f0e-95bf-4010-a9c8-6586a8effae3",
+      "c083c2c2-1180-4c36-beaa-69b1bf2ec686",
+      "6834bd68-3e6a-401c-b02e-c1c0cd3b8b9e",
+      "64d9b368-5ebf-4a69-8df5-7a7defacc59e",
+      "12583e12-1a8d-4bee-be8d-33c35f6ff6c9",
+      "0812d481-90d8-4fda-a39e-1fc2efc8e556",
+      "2571aaa2-a27f-49b2-bc15-01e5c47d25e5",
+      "5373ed20-d660-4e27-ac97-db1ba877d5a2"
+    ]
+  },
+  "Vulnbank": {
+    "count": 9,
+    "uuids": [
+      "b1ca6bd4-0713-4b4c-87d0-47803cf7e40f",
+      "ed9a8adb-980e-4426-a849-61978655a0ca",
+      "91de6a7b-606c-473c-99b4-75c6f511c2e8",
+      "0634cf2a-d99f-4438-9c77-3e0349eb3084",
+      "5642e28e-5466-451b-afce-ca776fe41660",
+      "03c4ae3e-b4c5-4276-88a1-cb6e03a6891d",
+      "a25f5f75-8c6c-40e5-9a03-11bc407fe2f2",
+      "60804e7c-ce77-4c0c-aad6-0f04f3a20285",
+      "35947f83-f4de-4270-b411-8b1c8d573aa3"
+    ]
+  },
+  "XBEN": {
+    "count": 0,
+    "uuids": []
+  }
+}

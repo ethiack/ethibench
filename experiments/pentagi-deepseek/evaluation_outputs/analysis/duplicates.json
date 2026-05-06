@@ -1,0 +1,16 @@
+{
+  "PAYGoat": {
+    "count": 0,
+    "uuids": []
+  },
+  "Vulnbank": {
+    "count": 1,
+    "uuids": [
+      "6ef5286f-5df4-40f7-9ebf-10c6ae9497d7"
+    ]
+  },
+  "XBEN": {
+    "count": 0,
+    "uuids": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "true_positives": 8.333333333333334,
+  "true_positives_std": 2.309401076758503,
+  "false_positives": 5.666666666666667,
+  "false_positives_std": 3.0550504633038935,
+  "false_negatives": 19.666666666666668,
+  "false_negatives_std": 2.309401076758503,
+  "duplicates": 1,
+  "duplicates_std": 1.7320508075688772,
+  "precision": 0.6021825396825397,
+  "precision_std": 0.17487071404004093,
+  "recall": 0.2976190476190476,
+  "recall_std": 0.08247860988423225,
+  "f1_score": 0.3973304473304473,
+  "f1_score_std": 0.11068340780714951,
+  "f05_score": 0.49857433438669135,
+  "f05_score_std": 0.14106587566309606,
+  "severity_score": 206.66666666666666,
+  "severity_score_std": 40.67349669420289,
+  "cwe_coverage": 6.666666666666667,
+  "cwe_coverage_std": 1.5275252316519468,
+  "subset_name": "PAYGoat"
+}

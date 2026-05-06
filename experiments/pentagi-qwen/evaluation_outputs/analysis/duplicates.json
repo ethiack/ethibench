@@ -1,0 +1,22 @@
+{
+  "PAYGoat": {
+    "count": 3,
+    "uuids": [
+      "584790c4-4ae1-464c-be09-b65d50e367c1",
+      "a0b52b06-d135-4a1d-8353-bfd9a573ce9d",
+      "b7b18cbb-f826-4de0-a9aa-eea896cb9af1"
+    ]
+  },
+  "Vulnbank": {
+    "count": 3,
+    "uuids": [
+      "ee60d7b9-3055-4939-9f15-d2d0705709a2",
+      "0f07259f-e4b2-4e7b-b8d2-4ab92582e7e1",
+      "32184b23-582e-4be2-b6dd-aaf11d5d311e"
+    ]
+  },
+  "XBEN": {
+    "count": 0,
+    "uuids": []
+  }
+}

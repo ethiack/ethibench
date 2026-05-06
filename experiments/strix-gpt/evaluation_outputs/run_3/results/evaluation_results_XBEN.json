@@ -1,0 +1,15 @@
+[
+  {
+    "true_positives": 2,
+    "false_positives": 0,
+    "false_negatives": 18,
+    "duplicates": 0,
+    "precision": 1.0,
+    "recall": 0.1,
+    "f1_score": 0.18181818181818182,
+    "f05_score": 0.35714285714285715,
+    "severity_score": 45,
+    "cwe_coverage": 2,
+    "subset_name": "XBEN"
+  }
+]

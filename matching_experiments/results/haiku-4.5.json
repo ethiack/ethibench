@@ -1,0 +1,28 @@
+{
+  "model_key": "haiku-4.5",
+  "model_name": "claude-haiku-4-5",
+  "display_name": "Haiku 4.5",
+  "provider": "anthropic",
+  "n_replicates": 3,
+  "replicates": [
+    {
+      "true_positives": 19,
+      "false_positives": 29
+    },
+    {
+      "true_positives": 20,
+      "false_positives": 28
+    },
+    {
+      "true_positives": 18,
+      "false_positives": 29
+    }
+  ],
+  "summary": {
+    "true_positives_mean": 19,
+    "true_positives_std": 1.0,
+    "false_positives_mean": 28.666666666666668,
+    "false_positives_std": 0.5773502691896257
+  },
+  "last_updated": "2026-05-05T16:39:36.385969"
+}

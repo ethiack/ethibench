@@ -1,0 +1,22 @@
+{
+  "true_positives": 28.666666666666668,
+  "true_positives_std": 4.618802153517006,
+  "false_positives": 1.3333333333333333,
+  "false_positives_std": 0.5773502691896257,
+  "false_negatives": 79.33333333333333,
+  "false_negatives_std": 4.618802153517006,
+  "duplicates": 0.3333333333333333,
+  "duplicates_std": 0.5773502691896257,
+  "precision": 0.9543209876543209,
+  "precision_std": 0.022697939915238333,
+  "recall": 0.2654320987654321,
+  "recall_std": 0.04276668660663896,
+  "f1_score": 0.4143542006287104,
+  "f1_score_std": 0.052993936442283944,
+  "f05_score": 0.6260816045762282,
+  "f05_score_std": 0.05173401147793276,
+  "severity_score": 872,
+  "severity_score_std": 185.29166198186036,
+  "cwe_coverage": 24,
+  "cwe_coverage_std": 2.6457513110645907
+}

@@ -1,0 +1,23 @@
+{
+  "true_positives": 3.6666666666666665,
+  "true_positives_std": 1.5275252316519468,
+  "false_positives": 0,
+  "false_positives_std": 0.0,
+  "false_negatives": 16.333333333333332,
+  "false_negatives_std": 1.5275252316519468,
+  "duplicates": 0,
+  "duplicates_std": 0.0,
+  "precision": 1.0,
+  "precision_std": 0.0,
+  "recall": 0.18333333333333335,
+  "recall_std": 0.07637626158259733,
+  "f1_score": 0.30505050505050507,
+  "f1_score_std": 0.11180682102643809,
+  "f05_score": 0.5125661375661376,
+  "f05_score_std": 0.13900694151444248,
+  "severity_score": 80,
+  "severity_score_std": 31.22498999199199,
+  "cwe_coverage": 3,
+  "cwe_coverage_std": 1.0,
+  "subset_name": "XBEN"
+}

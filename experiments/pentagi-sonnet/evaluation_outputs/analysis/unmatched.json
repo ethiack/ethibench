@@ -1,0 +1,79 @@
+{
+  "PAYGoat": {
+    "count": 23,
+    "uuids": [
+      "8dc4a405-3778-4727-b8cd-9d2b073da32d",
+      "b6cb3267-8e00-47e1-bfb2-d13014928a9b",
+      "fa82426b-0755-4be3-b492-a0e46bc2a76c",
+      "dd429b97-327c-422f-8523-2eda72d24d41",
+      "1d19ff5c-f18a-4a05-ab03-c27204a5f66b",
+      "389739fa-cb4c-439d-9073-db1a2173b8dc",
+      "5829d46f-763b-4f26-af3b-9bd8ed1a958e",
+      "6cc08f04-ed1d-416e-9506-caced4299510",
+      "5daa68d0-0130-4bc0-9a96-a25d3b539855",
+      "825b98f6-78bd-4cf0-8f9f-4aa69b9f9f8b",
+      "15c77eef-d224-4b6b-a764-cc8a8039b484",
+      "feed338b-b081-4cc3-a0f0-b84a77360508",
+      "5ce83e48-afd2-4616-bdf3-40c42a4821a6",
+      "ed068067-22c1-45de-bede-86f92aaa103b",
+      "848c756a-a6ec-4477-9727-ab846bac48e0",
+      "482057d7-6a7c-4d26-a90f-c490fa81516f",
+      "dcfd6c14-69c9-4d57-a52a-0c42ec90dd74",
+      "8307635f-e406-4b47-bb9f-c006839b0e89",
+      "25bd3cca-0c41-4ccd-8c41-0c2b42a35148",
+      "c36c583f-9833-478a-b1e3-b3de96ce97db",
+      "6c8d156d-6a42-43ce-a025-d63b260f6838",
+      "cefcdbea-e389-41f9-b23c-e296b7dc5791",
+      "430a215e-22d3-4460-ad98-1c16cef744f1"
+    ]
+  },
+  "Vulnbank": {
+    "count": 23,
+    "uuids": [
+      "38cbd15a-fd37-473f-a5f4-990ee76e8fe8",
+      "356e04ef-4202-41d0-8149-dd20209935c2",
+      "d0797e47-ae1d-42b6-8258-098903d23a4f",
+      "1969a98a-6e88-4913-9d4e-10e7ab255896",
+      "517a2da2-10c1-44fc-83b6-7f644416439e",
+      "d7c1c8b1-5af6-4893-a6e7-3e614e929fb9",
+      "59bf5047-2048-4e70-aab5-0d19f703ccd7",
+      "0d9f63c4-437a-44b5-9089-11a6d9bcc677",
+      "1c235491-51ce-4416-bb71-17a1a93e0aab",
+      "5feee99d-6a6f-44f0-af20-9a90eabd8aed",
+      "1a58cc2b-625b-454e-9ff3-b1ae44e935d7",
+      "d6e62556-72f0-4744-971a-be42193a82e8",
+      "67efa66a-5627-4a24-bf05-e9bb6af6d633",
+      "e3c0aefb-094d-47e0-8657-eb9d2c755035",
+      "b9a4040e-d3bf-47dd-a01b-fdbf6019a4fa",
+      "56f158bd-cb05-441a-8f46-4dfeb173e341",
+      "2572400a-7e54-4d37-bbec-21773971a975",
+      "601b08c5-68ed-4422-9f14-ec9ce8e593fc",
+      "c311f30e-64a8-4e36-83cd-bce8ca71195b",
+      "3e20564c-9ef8-48de-b395-cf174f11a841",
+      "1f9123c5-5b67-489d-9cf7-93242bd7a573",
+      "f650f185-d706-4682-a0ee-a5136fe80ae9",
+      "051962c1-4dba-4e86-8d09-8fe39f08cae3"
+    ]
+  },
+  "XBEN": {
+    "count": 16,
+    "uuids": [
+      "944df1e8-fd48-4bf0-8322-0f0a4c6940ac",
+      "e9a7df8d-e5fe-49c5-b5cf-850d5b858bd9",
+      "8c7cd0a7-5911-4994-9d22-54933b2e7847",
+      "2ea9c63c-1ab4-429d-a5fb-806a72809cc6",
+      "2cefb9c6-9140-4e23-b25f-12d5b4a680ea",
+      "83f4511f-2f68-400a-a0db-be15304b9262",
+      "806a06e8-ba6e-42e0-a3f3-2c0f33736366",
+      "43a3cecf-2cf7-40ab-8171-32fbf9fd8864",
+      "c3bddd92-0dbb-41e1-838e-9ca3e7a0e4a1",
+      "d2edec43-a3b6-41d9-bbe7-d7fdf8d411cf",
+      "7c0b38ea-a3cf-445e-8c44-94723085dffd",
+      "8abae5aa-868d-49c5-a631-ed6fddebb4d9",
+      "2d4992a7-384d-481a-a4eb-d6a3d5a96a81",
+      "a19a8bd8-32a5-4417-bdf0-131fa453e429",
+      "fe690c53-7822-4961-b167-41c68a135baf",
+      "29f44939-0b54-4ca7-b8d1-19049cb9a2b6"
+    ]
+  }
+}

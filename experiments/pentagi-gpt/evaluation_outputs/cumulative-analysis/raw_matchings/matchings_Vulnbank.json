@@ -1,0 +1,369 @@
+[
+  {
+    "02e8fc50-b847-4e0f-b382-2e0412239a8e": {
+      "selected_gt_ids": [
+        "c946d38b-f0ac-45af-a7fd-a37cadb526e9"
+      ]
+    },
+    "a4b14173-b977-4ccc-bb56-797d8f9d32ae": {
+      "selected_gt_ids": [
+        "a05c33d3-b4d2-44b4-929e-2c224a4a3397"
+      ]
+    },
+    "53fa16a3-c62f-4b53-8d40-6b096fc271e4": {
+      "selected_gt_ids": []
+    },
+    "2ce57dea-c4f3-4b61-a874-0badbbb830ec": {
+      "selected_gt_ids": [
+        "f1f36714-effa-49d5-a689-0e43a77960ef",
+        "c946d38b-f0ac-45af-a7fd-a37cadb526e9"
+      ]
+    },
+    "8fa304c2-4679-470a-9b3f-a3763e55a95e": {
+      "selected_gt_ids": [
+        "f1f36714-effa-49d5-a689-0e43a77960ef"
+      ]
+    },
+    "e06e59a4-36c7-49e0-a0c6-0c51c7a2d800": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "393bc5eb-5c9d-4a88-a607-eb7befcac863": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "a6e01960-0b42-4a51-8023-f5becd37b592": {
+      "selected_gt_ids": []
+    },
+    "03d7af64-199a-4b05-b8d6-a3d51a037d2a": {
+      "selected_gt_ids": [
+        "49a19c66-2906-4349-82c7-5084663eed76"
+      ]
+    },
+    "77715e58-a5b1-4da5-8841-972c9f64b565": {
+      "selected_gt_ids": [
+        "bf199c65-27d2-4a30-bb21-735210be795e"
+      ]
+    },
+    "8ca46fa1-78e1-44fb-b489-f5357436d567": {
+      "selected_gt_ids": [
+        "49a19c66-2906-4349-82c7-5084663eed76"
+      ]
+    },
+    "4264a43d-6ad0-4cb4-bed4-49eeb1132626": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "8f771d8b-19ad-4208-b5cf-96d0b19ed53b": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "1500cfe5-3e8f-46f2-983a-2ec3cfd9e6ca": {
+      "selected_gt_ids": [
+        "3a4d83fb-e4b8-4db3-aa2e-cab2300545c5"
+      ]
+    },
+    "7857bd8b-011f-478c-aeca-a226e7961513": {
+      "selected_gt_ids": [
+        "70f2b3d0-4911-4aea-8b97-daa5921ec2eb",
+        "8fe5a88f-df9e-4a57-8269-88a7109875e7",
+        "f6c6e70f-1041-4894-9245-ed49d556c2d2",
+        "1fe2aaa3-ba46-4dd6-9766-7bfe38c0b62e",
+        "c946d38b-f0ac-45af-a7fd-a37cadb526e9"
+      ]
+    },
+    "f295a659-db9d-46b4-8b2b-ddbbc875ce76": {
+      "selected_gt_ids": [
+        "8fe5a88f-df9e-4a57-8269-88a7109875e7",
+        "f6c6e70f-1041-4894-9245-ed49d556c2d2",
+        "1fe2aaa3-ba46-4dd6-9766-7bfe38c0b62e"
+      ]
+    },
+    "77b2823d-e03f-49d6-aff9-ef81b11de94f": {
+      "selected_gt_ids": [
+        "685c15b9-8385-4713-b810-82b8605d6de9",
+        "b5af8835-1bf8-45e5-a12a-8c5ba7c848fc",
+        "75860f4e-75a1-4b21-ac88-8bc36a7c615e"
+      ]
+    },
+    "e6062b39-8b47-4ad7-a2f3-90469489b881": {
+      "selected_gt_ids": [
+        "b5af8835-1bf8-45e5-a12a-8c5ba7c848fc",
+        "75860f4e-75a1-4b21-ac88-8bc36a7c615e",
+        "852cd71b-4d46-405b-a698-13f627234950"
+      ]
+    },
+    "694dcb27-c927-4a01-8201-e1ad348f3694": {
+      "selected_gt_ids": [
+        "2b24f112-2541-4380-8894-7b1a8cb6372b"
+      ]
+    },
+    "ddb6e93d-75ac-49a9-b468-27c3d885d4e8": {
+      "selected_gt_ids": [
+        "8e23bfc5-1274-4051-9a50-030c6229071a"
+      ]
+    },
+    "45c7ef57-61ce-45dc-8d85-82860ef4fde1": {
+      "selected_gt_ids": [
+        "8c925a2a-119f-4c12-bc86-aa55f5af07cc"
+      ]
+    },
+    "baf1a3c3-475e-40b2-9fa0-10d49dd13dd5": {
+      "selected_gt_ids": [
+        "31293993-2be4-46c9-b324-309294f343de",
+        "92344ace-b22b-4d20-a326-de9cdd7a7ac1",
+        "50f62531-2f72-4199-85c8-234c395cabc5"
+      ]
+    },
+    "53af7cf2-9294-4a11-b43b-cdb81e64496f": {
+      "selected_gt_ids": [
+        "f1f36714-effa-49d5-a689-0e43a77960ef"
+      ]
+    },
+    "955507e3-10f7-47e6-bb1d-b8ab51223ebe": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "c9b6c529-3335-4f19-a09a-d67182f87114": {
+      "selected_gt_ids": [
+        "0bf61e42-0a3a-45c0-8e8d-e540ef7409d6"
+      ]
+    },
+    "4f25fa7b-4e4c-41a7-964b-0e2a28f30719": {
+      "selected_gt_ids": [
+        "c4cb7e49-48e1-4837-b1af-86c61c41ff86"
+      ]
+    },
+    "a604f6a9-f4fc-425a-a435-f1c604b822eb": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "07d30390-2244-408b-964d-965335e50d33": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "a3e1f757-121c-4831-a27c-1371a64e1688": {
+      "selected_gt_ids": []
+    },
+    "c63ed24d-0ca5-45fa-a4f3-d879e1d7b4a8": {
+      "selected_gt_ids": [
+        "3ab3555a-44f4-4ced-9052-c25948f81d95",
+        "c50bf852-13d5-4d33-849c-e6af51d7f1e9",
+        "7966b578-5d18-4b78-909e-692075874e93",
+        "48c08a14-5c1a-42b1-b767-cc989e09e3b9"
+      ]
+    },
+    "0bf05b38-4e9f-4dd6-a420-ad89fb273b8e": {
+      "selected_gt_ids": [
+        "0109d433-0716-4859-8efd-de4d3c175a70"
+      ]
+    },
+    "1ee59bb4-cb1e-4d79-94de-25825e8bfdf6": {
+      "selected_gt_ids": [
+        "0109d433-0716-4859-8efd-de4d3c175a70"
+      ]
+    },
+    "a3d48321-0dde-43bd-82ae-47c5a7ba0e49": {
+      "selected_gt_ids": [
+        "0109d433-0716-4859-8efd-de4d3c175a70"
+      ]
+    },
+    "1a561d57-1ea1-42c9-8ce0-f4e1f5211677": {
+      "selected_gt_ids": []
+    },
+    "00a18b03-3c41-4588-8a0e-f95d725c0f5c": {
+      "selected_gt_ids": [
+        "c946d38b-f0ac-45af-a7fd-a37cadb526e9"
+      ]
+    },
+    "6afc756c-8610-4331-91b3-f94298765a92": {
+      "selected_gt_ids": [
+        "48c08a14-5c1a-42b1-b767-cc989e09e3b9"
+      ]
+    },
+    "9bf20513-2daf-4428-ab19-68bbcd4f5637": {
+      "selected_gt_ids": [
+        "c50bf852-13d5-4d33-849c-e6af51d7f1e9",
+        "48c08a14-5c1a-42b1-b767-cc989e09e3b9",
+        "1c991774-a9b1-4ddb-ba3e-0ac3de69ffd1"
+      ]
+    },
+    "072aad60-9ae0-4420-8330-db517f32182a": {
+      "selected_gt_ids": [
+        "49a19c66-2906-4349-82c7-5084663eed76"
+      ]
+    },
+    "8cef684c-4b07-4ce9-9f25-633b73914081": {
+      "selected_gt_ids": [
+        "bf199c65-27d2-4a30-bb21-735210be795e",
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "83f64d6c-e301-4768-a985-a94676f86fa7": {
+      "selected_gt_ids": [
+        "bf199c65-27d2-4a30-bb21-735210be795e",
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "8767ef8f-d0aa-4227-97da-6ef4cf8e21c8": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "8ba8f0c4-f50e-435a-aa8f-65d506fe5eaf": {
+      "selected_gt_ids": [
+        "3a4d83fb-e4b8-4db3-aa2e-cab2300545c5"
+      ]
+    },
+    "cf7e7954-1d0d-4937-a924-8c2de00f30ec": {
+      "selected_gt_ids": [
+        "8fe5a88f-df9e-4a57-8269-88a7109875e7",
+        "f6c6e70f-1041-4894-9245-ed49d556c2d2"
+      ]
+    },
+    "a08d9499-5b7d-4ad6-8ce5-c280a3781f91": {
+      "selected_gt_ids": []
+    },
+    "b6f3c95c-9c4c-44ca-af3a-fec0d7393d4d": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "8b4b5277-1ebf-4f90-8c57-38e43fa4fc18": {
+      "selected_gt_ids": []
+    },
+    "34520c07-98a4-4e6b-87e7-b6d57647993b": {
+      "selected_gt_ids": [
+        "8fe5a88f-df9e-4a57-8269-88a7109875e7",
+        "f6c6e70f-1041-4894-9245-ed49d556c2d2"
+      ]
+    },
+    "6f9734e2-8240-4af1-a995-b3bf81bbc37e": {
+      "selected_gt_ids": [
+        "70f2b3d0-4911-4aea-8b97-daa5921ec2eb",
+        "8fe5a88f-df9e-4a57-8269-88a7109875e7",
+        "f6c6e70f-1041-4894-9245-ed49d556c2d2",
+        "1fe2aaa3-ba46-4dd6-9766-7bfe38c0b62e"
+      ]
+    },
+    "42c8f50f-8172-453f-80b2-ae9c1ff08cef": {
+      "selected_gt_ids": [
+        "b6236fa3-6bd0-4cb1-8f20-9dfa77ca4bf5"
+      ]
+    },
+    "62413e85-966d-40e5-8a7f-dd2314fc7722": {
+      "selected_gt_ids": [
+        "90450448-d78a-4fea-af01-8d81c84c6a4e"
+      ]
+    },
+    "018f5efc-b8b9-4c13-9a06-2faaabec8aad": {
+      "selected_gt_ids": [
+        "bf199c65-27d2-4a30-bb21-735210be795e"
+      ]
+    },
+    "5fe49e44-7f0d-4e89-9890-3d4f5804d8f3": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "35ddb62a-0d87-4274-923a-0ab8b42e2ce3": {
+      "selected_gt_ids": [
+        "86fe273c-987a-48e9-8e84-316523b83a2c"
+      ]
+    },
+    "4f1da67f-e7bc-471c-9780-e3e61459ca4e": {
+      "selected_gt_ids": [
+        "70f2b3d0-4911-4aea-8b97-daa5921ec2eb",
+        "8fe5a88f-df9e-4a57-8269-88a7109875e7",
+        "f6c6e70f-1041-4894-9245-ed49d556c2d2"
+      ]
+    },
+    "1882c1d3-5b7d-4af6-a566-02e270d43e72": {
+      "selected_gt_ids": [
+        "c946d38b-f0ac-45af-a7fd-a37cadb526e9",
+        "3a4d83fb-e4b8-4db3-aa2e-cab2300545c5",
+        "f6c6e70f-1041-4894-9245-ed49d556c2d2"
+      ]
+    },
+    "eabdd06e-82f0-4968-b9be-965e772a0438": {
+      "selected_gt_ids": [
+        "0bf61e42-0a3a-45c0-8e8d-e540ef7409d6"
+      ]
+    },
+    "65761afa-6077-42f6-a6ca-f3ac2ecce2cf": {
+      "selected_gt_ids": [
+        "70f2b3d0-4911-4aea-8b97-daa5921ec2eb",
+        "8fe5a88f-df9e-4a57-8269-88a7109875e7",
+        "f6c6e70f-1041-4894-9245-ed49d556c2d2",
+        "1fe2aaa3-ba46-4dd6-9766-7bfe38c0b62e"
+      ]
+    },
+    "a18159e6-e430-41dd-a37c-0f7199edf28a": {
+      "selected_gt_ids": [
+        "90450448-d78a-4fea-af01-8d81c84c6a4e"
+      ]
+    },
+    "ccab0dbd-0979-4c0a-95e0-3fc2443c4274": {
+      "selected_gt_ids": [
+        "b5af8835-1bf8-45e5-a12a-8c5ba7c848fc",
+        "421400e7-07aa-4362-a1ae-39fc033899e1",
+        "75860f4e-75a1-4b21-ac88-8bc36a7c615e",
+        "852cd71b-4d46-405b-a698-13f627234950"
+      ]
+    },
+    "a87cabaa-eda8-4ae6-a54c-04281e6b163f": {
+      "selected_gt_ids": [
+        "31293993-2be4-46c9-b324-309294f343de",
+        "50f62531-2f72-4199-85c8-234c395cabc5"
+      ]
+    },
+    "79ec5cd5-0924-45e8-8221-ad120f89c4fe": {
+      "selected_gt_ids": []
+    },
+    "98e339dc-7684-4ea7-8bd8-cc8e07d69a20": {
+      "selected_gt_ids": [
+        "8e23bfc5-1274-4051-9a50-030c6229071a"
+      ]
+    },
+    "6a3efcc7-19c2-4955-9e25-1381437568fd": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "3055cab1-7865-4aac-a504-e3cee31d02ef": {
+      "selected_gt_ids": [
+        "f31780e1-6822-4615-9254-a19e367a521f"
+      ]
+    },
+    "f6dede4f-1221-4d13-b636-d24e275dbc91": {
+      "selected_gt_ids": []
+    },
+    "6f035f89-e9a1-4f66-82c0-3d7757735d95": {
+      "selected_gt_ids": [
+        "48c08a14-5c1a-42b1-b767-cc989e09e3b9",
+        "1c991774-a9b1-4ddb-ba3e-0ac3de69ffd1",
+        "3ab3555a-44f4-4ced-9052-c25948f81d95",
+        "8f4ab796-5b21-4ec1-a269-128bc299c792",
+        "c50bf852-13d5-4d33-849c-e6af51d7f1e9",
+        "7966b578-5d18-4b78-909e-692075874e93"
+      ]
+    },
+    "c9ee1d7a-187d-4b13-a82e-f126a95990d2": {
+      "selected_gt_ids": [
+        "0109d433-0716-4859-8efd-de4d3c175a70"
+      ]
+    },
+    "5d472076-2cfd-4e96-bb60-d577aca3128a": {
+      "selected_gt_ids": [
+        "a05c33d3-b4d2-44b4-929e-2c224a4a3397"
+      ]
+    }
+  }
+]

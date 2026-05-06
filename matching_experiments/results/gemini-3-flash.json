@@ -1,0 +1,28 @@
+{
+  "model_key": "gemini-3-flash",
+  "model_name": "gemini-3-flash-preview",
+  "display_name": "Gemini 3 Flash",
+  "provider": "gemini",
+  "n_replicates": 3,
+  "replicates": [
+    {
+      "true_positives": 25,
+      "false_positives": 23
+    },
+    {
+      "true_positives": 24,
+      "false_positives": 23
+    },
+    {
+      "true_positives": 24,
+      "false_positives": 25
+    }
+  ],
+  "summary": {
+    "true_positives_mean": 24.333333333333332,
+    "true_positives_std": 0.5773502691896257,
+    "false_positives_mean": 23.666666666666668,
+    "false_positives_std": 1.1547005383792515
+  },
+  "last_updated": "2026-05-05T18:04:09.741655"
+}

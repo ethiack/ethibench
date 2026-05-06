@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ethibench"
+version = "0.1.0"
+description = "Evaluation pipeline for security testing tools against ground truth datasets"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "Ethiack", email = "support@ethiack.com" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+]
+dependencies = [
+    "click>=8.1",
+    "langchain>=0.3",
+    "langchain-openai>=0.3",
+    "langchain-anthropic>=0.3",
+    "langchain-google-genai>=2.0",
+    "langchain-ollama>=0.3",
+    "scipy>=1.12",
+    "pydantic>=2.9",
+    "PyYAML>=6.0",
+    "matplotlib>=3.9",
+    "rich>=13.0",
+    "loguru>=0.7",
+    "dotenv (>=0.9.9,<0.10.0)",
+]
+
+[project.scripts]
+ethibench = "ethibench.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

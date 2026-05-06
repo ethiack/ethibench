@@ -1,0 +1,28 @@
+{
+  "model_key": "deepseek-3.1",
+  "model_name": "accounts/fireworks/models/deepseek-v3p1",
+  "display_name": "Deepseek 3.1",
+  "provider": "fireworks",
+  "n_replicates": 3,
+  "replicates": [
+    {
+      "true_positives": 31,
+      "false_positives": 18
+    },
+    {
+      "true_positives": 28,
+      "false_positives": 20
+    },
+    {
+      "true_positives": 31,
+      "false_positives": 16
+    }
+  ],
+  "summary": {
+    "true_positives_mean": 30,
+    "true_positives_std": 1.7320508075688772,
+    "false_positives_mean": 18,
+    "false_positives_std": 2.0
+  },
+  "last_updated": "2026-05-05T17:03:47.091464"
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "2e72a789-387c-4878-a476-014c9f501c42": {
+      "selected_gt_ids": [
+        "a4cd9a4f-ba70-48d7-b2af-62dca398f8eb",
+        "a1d1d0d0-e740-4051-aa24-a46f587de057",
+        "ace175c7-c645-4656-a2e1-41559f2e325c",
+        "484eee28-ea00-44e7-b977-657559b40cd6"
+      ]
+    },
+    "674515a7-68d6-4af8-b3ab-d2d156d8b27c": {
+      "selected_gt_ids": [
+        "eb49c53e-549b-4a22-b709-527aa378a923"
+      ]
+    },
+    "31e76a39-943f-4ec9-93e3-6e6a31ef9a9c": {
+      "selected_gt_ids": [
+        "3e4a1566-613b-4eea-ba93-73b90414630c"
+      ]
+    },
+    "d36ee78f-629d-49d5-b754-2a8ffe617caf": {
+      "selected_gt_ids": []
+    },
+    "68527ab6-cb6f-4ed4-a286-4f6ac6e518b1": {
+      "selected_gt_ids": [
+        "1eb3fc26-6fc0-4d08-8502-b1f35fdd03b8",
+        "f475db71-1dfd-40ca-8416-274a8b9fac04"
+      ]
+    }
+  }
+]

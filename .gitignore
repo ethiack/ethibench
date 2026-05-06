@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Reorganization script (one-off)
+reorganize_results.py
+
+# IDE
+.idea/
+.vscode/
+*.swp
+experiments/ai-pentesters/strix

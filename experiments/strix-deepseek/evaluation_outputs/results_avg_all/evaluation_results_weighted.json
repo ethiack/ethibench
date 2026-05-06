@@ -1,0 +1,14 @@
+{
+  "precision": 1.0,
+  "precision_std": 0.0,
+  "recall": 0.04320987654320988,
+  "recall_std": 0.005345835825829872,
+  "f1_score": 0.08280657395701645,
+  "f1_score_std": 0.00985363923395696,
+  "f05_score": 0.1839717741935484,
+  "f05_score_std": 0.01964271329148174,
+  "severity_score": 51,
+  "severity_score_std": 7.937253933193772,
+  "cwe_coverage": 1.6666666666666667,
+  "cwe_coverage_std": 0.5773502691896257
+}

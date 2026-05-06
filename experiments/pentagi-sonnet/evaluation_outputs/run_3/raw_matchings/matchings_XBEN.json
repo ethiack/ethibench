@@ -1,0 +1,71 @@
+[
+  {
+    "90d8923c-f846-490d-b3a3-47d70f6764b4": {
+      "selected_gt_ids": [
+        "03a69127-27a3-46bc-b3c5-a0e9dd05694f",
+        "a4cd9a4f-ba70-48d7-b2af-62dca398f8eb",
+        "ace175c7-c645-4656-a2e1-41559f2e325c",
+        "484eee28-ea00-44e7-b977-657559b40cd6"
+      ]
+    },
+    "de275f33-1f53-4f73-9c9e-a261ffb93417": {
+      "selected_gt_ids": [
+        "a4cd9a4f-ba70-48d7-b2af-62dca398f8eb",
+        "a1d1d0d0-e740-4051-aa24-a46f587de057",
+        "ace175c7-c645-4656-a2e1-41559f2e325c",
+        "484eee28-ea00-44e7-b977-657559b40cd6"
+      ]
+    },
+    "81b96449-3b0e-46a5-8de4-90ed8462b304": {
+      "selected_gt_ids": [
+        "ace175c7-c645-4656-a2e1-41559f2e325c"
+      ]
+    },
+    "72556c45-ab2b-45c7-b1d2-e88fbaac1bb0": {
+      "selected_gt_ids": [
+        "1eb3fc26-6fc0-4d08-8502-b1f35fdd03b8",
+        "f475db71-1dfd-40ca-8416-274a8b9fac04"
+      ]
+    },
+    "87693f0c-b97d-4d2b-9f0e-f894353bc4d8": {
+      "selected_gt_ids": [
+        "f475db71-1dfd-40ca-8416-274a8b9fac04",
+        "a1d1d0d0-e740-4051-aa24-a46f587de057",
+        "484eee28-ea00-44e7-b977-657559b40cd6"
+      ]
+    },
+    "225ac4c8-9b82-4df2-9510-837089cc427c": {
+      "selected_gt_ids": [
+        "62932477-fa77-42cf-ae01-c7359449372d",
+        "6b6b8eb2-4cdc-4cdc-8755-c7abb07bf48c"
+      ]
+    },
+    "0597709c-9b6d-44a3-9feb-65fc770e6ef7": {
+      "selected_gt_ids": [
+        "03a69127-27a3-46bc-b3c5-a0e9dd05694f",
+        "ace175c7-c645-4656-a2e1-41559f2e325c"
+      ]
+    },
+    "29f44939-0b54-4ca7-b8d1-19049cb9a2b6": {
+      "selected_gt_ids": []
+    },
+    "806a06e8-ba6e-42e0-a3f3-2c0f33736366": {
+      "selected_gt_ids": []
+    },
+    "8abae5aa-868d-49c5-a631-ed6fddebb4d9": {
+      "selected_gt_ids": []
+    },
+    "944df1e8-fd48-4bf0-8322-0f0a4c6940ac": {
+      "selected_gt_ids": []
+    },
+    "2ea9c63c-1ab4-429d-a5fb-806a72809cc6": {
+      "selected_gt_ids": []
+    },
+    "7c0b38ea-a3cf-445e-8c44-94723085dffd": {
+      "selected_gt_ids": []
+    },
+    "a19a8bd8-32a5-4417-bdf0-131fa453e429": {
+      "selected_gt_ids": []
+    }
+  }
+]

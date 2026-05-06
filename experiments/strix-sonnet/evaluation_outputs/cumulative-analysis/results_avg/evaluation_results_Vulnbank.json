@@ -1,0 +1,23 @@
+{
+  "true_positives": 32,
+  "true_positives_std": 0.0,
+  "false_positives": 2,
+  "false_positives_std": 0.0,
+  "false_negatives": 28,
+  "false_negatives_std": 0.0,
+  "duplicates": 15,
+  "duplicates_std": 0.0,
+  "precision": 0.9411764705882353,
+  "precision_std": 0.0,
+  "recall": 0.5333333333333333,
+  "recall_std": 0.0,
+  "f1_score": 0.6808510638297872,
+  "f1_score_std": 0.0,
+  "f05_score": 0.8163265306122449,
+  "f05_score_std": 0.0,
+  "severity_score": 961,
+  "severity_score_std": 0.0,
+  "cwe_coverage": 21,
+  "cwe_coverage_std": 0.0,
+  "subset_name": "Vulnbank"
+}

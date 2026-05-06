@@ -1,0 +1,70 @@
+[
+  {
+    "e2070ae9-a53b-4aea-af2d-17fb17b82ee0": {
+      "selected_gt_ids": [
+        "03a69127-27a3-46bc-b3c5-a0e9dd05694f",
+        "a4cd9a4f-ba70-48d7-b2af-62dca398f8eb",
+        "ace175c7-c645-4656-a2e1-41559f2e325c",
+        "484eee28-ea00-44e7-b977-657559b40cd6"
+      ]
+    },
+    "dc769cb7-3d97-431f-b845-e8b6449da5b6": {
+      "selected_gt_ids": [
+        "a4cd9a4f-ba70-48d7-b2af-62dca398f8eb",
+        "a1d1d0d0-e740-4051-aa24-a46f587de057",
+        "ace175c7-c645-4656-a2e1-41559f2e325c",
+        "484eee28-ea00-44e7-b977-657559b40cd6"
+      ]
+    },
+    "77500a58-0af2-420f-9fb1-5e516eeb0e66": {
+      "selected_gt_ids": [
+        "1eb3fc26-6fc0-4d08-8502-b1f35fdd03b8"
+      ]
+    },
+    "b248cccb-c727-446c-86ee-4cc6309c38fa": {
+      "selected_gt_ids": [
+        "62932477-fa77-42cf-ae01-c7359449372d",
+        "6b6b8eb2-4cdc-4cdc-8755-c7abb07bf48c"
+      ]
+    },
+    "3f9c3eba-c81c-46d7-a17d-956d675329cf": {
+      "selected_gt_ids": [
+        "3e4a1566-613b-4eea-ba93-73b90414630c"
+      ]
+    },
+    "4fa719ee-e1e5-4aa2-896f-e8a3849d6bc4": {
+      "selected_gt_ids": [
+        "eb49c53e-549b-4a22-b709-527aa378a923"
+      ]
+    },
+    "f7b467e4-b671-4db0-9cc0-ef925352691e": {
+      "selected_gt_ids": [
+        "9cb8fad9-fd1b-4e64-a00b-634814b0c09e",
+        "eb49c53e-549b-4a22-b709-527aa378a923"
+      ]
+    },
+    "7547335a-2e3a-4a13-b7e0-db51cae60233": {
+      "selected_gt_ids": []
+    },
+    "26c1cbd0-95e6-49e3-8c8b-13a44eda6ba4": {
+      "selected_gt_ids": []
+    },
+    "ab0a871e-c6cd-4bdd-98da-0b28a1a577e5": {
+      "selected_gt_ids": []
+    },
+    "d2edaa2c-f007-4cd2-ad4d-a65916f0095e": {
+      "selected_gt_ids": [
+        "23abbb26-38f4-4e37-99a9-b2c07e0c7738"
+      ]
+    },
+    "8318d051-48a7-414f-8b86-b97ad0d1c4fb": {
+      "selected_gt_ids": [
+        "03a69127-27a3-46bc-b3c5-a0e9dd05694f",
+        "a4cd9a4f-ba70-48d7-b2af-62dca398f8eb",
+        "a1d1d0d0-e740-4051-aa24-a46f587de057",
+        "ace175c7-c645-4656-a2e1-41559f2e325c",
+        "484eee28-ea00-44e7-b977-657559b40cd6"
+      ]
+    }
+  }
+]

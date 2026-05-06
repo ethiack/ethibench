@@ -1,0 +1,12 @@
+{
+  "true_positives": 25,
+  "false_positives": 15,
+  "false_negatives": 83,
+  "duplicates": 0,
+  "precision": 0.625,
+  "recall": 0.23148148148148148,
+  "f1_score": 0.33783783783783783,
+  "f05_score": 0.46641791044776115,
+  "severity_score": 644,
+  "cwe_coverage": 22
+}

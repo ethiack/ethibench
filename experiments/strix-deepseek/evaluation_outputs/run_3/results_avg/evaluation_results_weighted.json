@@ -1,0 +1,8 @@
+{
+  "precision": 1.0,
+  "recall": 0.0462962962962963,
+  "f1_score": 0.08849557522123895,
+  "f05_score": 0.19531250000000003,
+  "severity_score": 54,
+  "cwe_coverage": 2
+}

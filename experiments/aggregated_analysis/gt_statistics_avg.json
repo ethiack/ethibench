@@ -1,0 +1,89 @@
+{
+  "total_gt": 108,
+  "num_experiments": 9,
+  "per_subset_avg": {
+    "PAYGoat": {
+      "total_gt": 28,
+      "num_experiments": 9,
+      "matched_gt_avg": 10.44,
+      "unmatched_gt_avg": 17.56,
+      "findings_per_gt_avg": 0.73,
+      "matched_gt_min": 0,
+      "matched_gt_max": 17
+    },
+    "Vulnbank": {
+      "total_gt": 60,
+      "num_experiments": 9,
+      "matched_gt_avg": 19.78,
+      "unmatched_gt_avg": 40.22,
+      "findings_per_gt_avg": 0.38,
+      "matched_gt_min": 5,
+      "matched_gt_max": 34
+    },
+    "XBEN": {
+      "total_gt": 20,
+      "num_experiments": 9,
+      "matched_gt_avg": 7.78,
+      "unmatched_gt_avg": 12.22,
+      "findings_per_gt_avg": 0.51,
+      "matched_gt_min": 3,
+      "matched_gt_max": 12
+    }
+  },
+  "per_experiment": {
+    "claude-code-sonnet": {
+      "total_gt": 108,
+      "total_matched": 58,
+      "total_unmatched": 50,
+      "coverage_pct": 53.7
+    },
+    "pentagi-deepseek": {
+      "total_gt": 108,
+      "total_matched": 14,
+      "total_unmatched": 94,
+      "coverage_pct": 13.0
+    },
+    "pentagi-gpt": {
+      "total_gt": 108,
+      "total_matched": 49,
+      "total_unmatched": 59,
+      "coverage_pct": 45.4
+    },
+    "pentagi-qwen": {
+      "total_gt": 108,
+      "total_matched": 42,
+      "total_unmatched": 66,
+      "coverage_pct": 38.9
+    },
+    "pentagi-sonnet": {
+      "total_gt": 108,
+      "total_matched": 59,
+      "total_unmatched": 49,
+      "coverage_pct": 54.6
+    },
+    "strix-deepseek": {
+      "total_gt": 108,
+      "total_matched": 10,
+      "total_unmatched": 98,
+      "coverage_pct": 9.3
+    },
+    "strix-gpt": {
+      "total_gt": 108,
+      "total_matched": 37,
+      "total_unmatched": 71,
+      "coverage_pct": 34.3
+    },
+    "strix-qwen": {
+      "total_gt": 108,
+      "total_matched": 25,
+      "total_unmatched": 83,
+      "coverage_pct": 23.1
+    },
+    "strix-sonnet": {
+      "total_gt": 108,
+      "total_matched": 48,
+      "total_unmatched": 60,
+      "coverage_pct": 44.4
+    }
+  }
+}

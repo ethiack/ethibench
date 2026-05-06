@@ -1,0 +1,18 @@
+[
+  {
+    "9436f78f-b94b-47e6-8f67-afc14178aa0d": {
+      "selected_gt_ids": [
+        "62932477-fa77-42cf-ae01-c7359449372d",
+        "6b6b8eb2-4cdc-4cdc-8755-c7abb07bf48c"
+      ]
+    },
+    "1d29e2da-7d4a-4810-a85f-bd5f16aef96d": {
+      "selected_gt_ids": [
+        "83fd757c-f6a8-462e-ac0f-4211b3f2d10e"
+      ]
+    },
+    "582e97ab-d883-4095-bbf6-c0efcd0225d0": {
+      "selected_gt_ids": []
+    }
+  }
+]
