@@ -15,6 +15,10 @@
 
 ## From Controlled to the Wild: Evaluation of Pentesting Agents for the Real-World
 
+<p align="center">
+  <img src="assets/architecture.png" alt="EthiBench architecture" width="700">
+</p>
+
 AI pentesting agents are increasingly credible as offensive security systems, but current benchmarks still provide limited guidance on which systems will perform best on real-world targets. Most existing evaluations assess and optimize for predefined goals such as flag capture, remote code execution, exploit reproduction, or trajectory similarity, in simplified or narrow settings. These benchmarks are valuable for measuring bounded capabilities, yet they do not adequately capture the complexity, open-ended exploration, and strategic decision-making required in realistic pentesting. We present a practical evaluation framework that shifts assessment from task completion to validated vulnerability discovery, allowing evaluation in sufficiently complex targets spanning multiple attack surfaces and vulnerability classes. The framework combines structured ground-truth with LLM-based semantic matching to identify vulnerabilities, bipartite resolution to score findings under realistic ambiguity, continuous ground-truth maintenance, repeated and cumulative evaluation of stochastic agents, efficiency metrics, and reduced-suite selection for sustainable experimentation.
 
 This repository contains the code for the proposed **adaptable evaluation protocol** — not a static benchmark. You can bring your own targets, agents, and findings; EthiBench handles the matching and scoring. Howver, we also provide **108 expert-annotated ground-truth entries** (in [`examples/gt/`](examples/gt/)) for three open-source targets, that you can evaluate your agents on:
@@ -24,10 +28,6 @@ This repository contains the code for the proposed **adaptable evaluation protoc
 | **vuln-bank** | 60 | [Commando-X/vuln-bank](https://github.com/Commando-X/vuln-bank) |
 | **paygoat** | 28 | [stuxctf/PAYGoat](https://github.com/stuxctf/PAYGoat) |
 | **xben-090** | 20 | [xbow-engineering/validation-benchmarks (XBEN-090)](https://github.com/xbow-engineering/validation-benchmarks/tree/main/benchmarks/XBEN-090-24) |
-
-<p align="center">
-  <img src="assets/architecture.png" alt="EthiBench architecture" width="700">
-</p>
 
 ## Installation
 
