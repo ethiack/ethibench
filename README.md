@@ -85,6 +85,12 @@ Each line in `findings.jsonl` is a JSON object. The LLM matcher uses `title`, `d
 
 Other supported optional fields: `cwe`, `severity`, `score`, `cvss_vector`, `evidence`, `url`, `impact`, `mitigation`, and `metadata`.
 
+> **Tip — converting unstructured reports:** If your agent produces a free-form Markdown report instead of structured JSONL, you can use the included `ethibench convert-report` command as a starting point:
+> ```bash
+> ethibench convert-report ./my_experiment/vuln-bank/report.md -o ./my_experiment/vuln-bank/findings.jsonl
+> ```
+> This uses an LLM to extract individual findings from a report. It is provided as an **example script** — you may need to adapt the extraction prompt in [`src/ethibench/convert_report.py`](src/ethibench/convert_report.py) depending on your report format and quality.
+
 ### 3. Run the evaluation
 
 ```bash
@@ -271,7 +277,7 @@ One JSON object per line. Required field: `title`, `description`. Optional: `url
 Each `findings.jsonl` lives inside a target directory — the directory name determines which target the findings belong to.
 
 ```json
-{"title": "SQL Injection in Login", "description": "User input not sanitized", "cwe": "89"}
+{"title": "SQL Injection in Login", "description": "User input in the login form is interpolated directly into the SQL query without parameterization, allowing authentication bypass.", "steps": "1. Send POST /login with username=' OR 1=1--\n2. Observe successful authentication without valid credentials."}
 ```
 
 ### Ground Truth (`*_gt.jsonl`)
@@ -279,7 +285,7 @@ Each `findings.jsonl` lives inside a target directory — the directory name det
 One JSON object per line.
 
 ```json
-{"id": "gt-001", "name": "SQL Injection", "subset_name": "MyApp", "target_id": "app", "category": "CWE-89", "description": "Database query vulnerability", "cvss": 9.8}
+{"id": "gt-001", "subset_name": "MyApp", "target_id": "myapp", "name": "Stored XSS in Comments", "category": "CWE-79", "description": "User-supplied HTML in comment fields is rendered without sanitization, allowing persistent script injection that executes in other users' browsers.", "additional_info": "CWE-79: Improper Neutralization of Input During Web Page Generation", "cvss": 6.1}
 ```
 
 ### Dataset YAML
