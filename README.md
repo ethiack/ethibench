@@ -1,4 +1,16 @@
-# From Controlled to the Wild: Evaluation of Pentesting Agents in the Real-World
+<a name="readme-top"></a>
+<div align="center">
+
+<h1>
+  <br>
+    <img src="assets/logo.png" alt="logo" width="400">
+    <br><br>
+    Ethibench
+    <br><br>
+</h1>
+</div>
+
+## From Controlled to the Wild: Evaluation of Pentesting Agents in the Real-World
 
 AI pentesting agents are increasingly credible as offensive security systems, but current benchmarks still provide limited guidance on which systems will perform best on real-world targets. Most existing evaluations assess and optimize for predefined goals such as flag capture, remote code execution, exploit reproduction, or trajectory similarity, in simplified or narrow settings. These benchmarks are valuable for measuring bounded capabilities, yet they do not adequately capture the complexity, open-ended exploration, and strategic decision-making required in realistic pentesting. We present a practical evaluation framework that shifts assessment from task completion to validated vulnerability discovery, allowing evaluation in sufficiently complex targets spanning multiple attack surfaces and vulnerability classes. The framework combines structured ground-truth with LLM-based semantic matching to identify vulnerabilities, bipartite resolution to score findings under realistic ambiguity, continuous ground-truth maintenance, repeated and cumulative evaluation of stochastic agents, efficiency metrics, and reduced-suite selection for sustainable experimentation. This methodology extends the state of the art by enabling more realistic and operationally informative comparison of AI pentesting agents. To enable reproducibility, we additionally release expert-annotated ground-truth and code for the proposed evaluation protocol.
 
@@ -344,3 +356,11 @@ src/ethibench/
     ├── unmatched.py    # Unmatched finding extraction
     └── statistics.py   # GT coverage statistics
 ```
+
+## License
+
+See [LICENSE](LICENSE).
+
+---
+
+**Disclaimer:** This content is intended for educational purposes and authorized security testing only. Users are responsible for ensuring compliance with applicable laws and regulations.
