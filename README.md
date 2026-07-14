@@ -10,6 +10,7 @@
 </h1>
 
 <a href="https://arxiv.org/abs/2605.10834"><img src="https://img.shields.io/badge/arXiv-2605.10834-b31b1b.svg" alt="arXiv"></a>
+<a href="https://ethiack.com/info-hub/research/evaluating-pentesting-agents-part-1"><img src="https://img.shields.io/badge/blog-part%201-5eff88.svg" alt="Blog"></a>
 
 [Quick Start](#quick-start) •
 [Demo](#demo-evaluating-with-the-included-targets) •
