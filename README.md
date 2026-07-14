@@ -11,6 +11,13 @@
 
 <a href="https://arxiv.org/abs/2605.10834"><img src="https://img.shields.io/badge/arXiv-2605.10834-b31b1b.svg" alt="arXiv"></a>
 
+[Quick Start](#quick-start) •
+[Demo](#demo-evaluating-with-the-included-targets) •
+[CLI](#cli-commands) •
+[File Formats](#file-formats) •
+[Configuration](#configuration) •
+[Citation](#citation)
+
 </div>
 
 ## From Controlled to the Wild: Evaluation of Pentesting Agents for the Real-World
@@ -37,7 +44,7 @@ pipx install ethibench       # recommended: isolated env, CLI on PATH
 pip install ethibench        # if you already manage your own envs
 ```
 
-Requires Python 3.11+ and Poetry installed.
+Requires Python 3.11+.
 
 ### For development
 
@@ -47,6 +54,10 @@ cd ethibench
 poetry install
 poetry run ethibench --help
 ```
+
+Requires Python 3.11+ and [Poetry](https://python-poetry.org/) installed.
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
 ## Quick Start
 
@@ -60,6 +71,8 @@ ethibench evaluate ./my_experiment --dataset path/to/dataset.yaml
 # 3. View results
 cat ./my_experiment/evaluation_outputs/summary.md
 ```
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
 ## Demo: Evaluating with the Included Targets
 
@@ -125,6 +138,8 @@ cat ./my_experiment/evaluation_outputs/summary.md
 
 For multi-run experiments, a **cumulative analysis** is automatically produced — merging all runs and recomputing matching on the combined data without additional LLM calls (see [Cumulative Analysis](#cumulative-analysis)).
 
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## Adapting to Your Own Targets
 
 EthiBench works with **any** target — you provide a ground truth and a dataset configuration; the framework handles matching, scoring, and reporting.
@@ -180,6 +195,8 @@ ethibench evaluate ./my_experiment --dataset my_dataset.yaml --gt-dir my_gt/
 ```
 
 To configure the LLM used for matching, set environment variables (see [Configuration](#configuration)). The default is OpenAI's `gpt-5.4-mini` with temperature 0.3. Use `--replicates N` for statistical robustness across multiple LLM matching passes.
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
 ## CLI Commands
 
@@ -279,6 +296,8 @@ ethibench compare exp-extra/ --parent-dir all-experiments/ --output-dir comparis
 - `pairwise_comparison.tex` — LaTeX version of the pairwise table.
 - `cumulative-analysis/` — (if cumulative data exists) delta analysis comparing averaged vs cumulative F1, plus cumulative comparison plots.
 
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## File Formats
 
 ### Findings (`findings.jsonl`)
@@ -310,6 +329,8 @@ One JSON object per line.
 
 The `target_id` must match the directory name under each run folder. When evaluating, ethibench scans the run directory for subdirectories matching known `target_id` values, loads their `findings.jsonl`, and assigns them to the corresponding subset. Optional `gt_file` field specifies a custom GT file path.
 
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## Configuration
 
 All configuration is via environment variables:
@@ -326,6 +347,8 @@ All configuration is via environment variables:
 | `ANTHROPIC_API_KEY` | — | Anthropic API key |
 | `OPENAI_API_KEY` | — | OpenAI API key |
 | `GEMINI_API_KEY` | — | Google Gemini API key |
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
 ## Directory Structure
 
@@ -412,6 +435,8 @@ parent_dir/
     └── gt_statistics_avg.json        # averaged GT coverage stats
 ```
 
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## Cumulative Analysis
 
 For experiments with multiple runs (`run_*` subdirectories), ethibench automatically produces a **cumulative analysis** that merges all runs into a single combined dataset and recomputes bipartite matching and metrics on the merged data. This runs as the last step of `ethibench evaluate` for multi-run experiments.
@@ -458,6 +483,8 @@ evaluation_outputs/cumulative-analysis/
     └── vulnerability_frequency.png
 ```
 
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## How Matching Works
 
 1. **Raw matching**: Each finding is compared with each ground truth entry by an LLM. The LLM decides YES/NO for each pair. This produces a many-to-many mapping.
@@ -476,6 +503,8 @@ evaluation_outputs/cumulative-analysis/
    - F1 = 2 × P × R / (P + R)
    - F0.5 = 1.25 × P × R / (0.25 × P + R)
    - Severity Score = sum of CVSS-based points for each TP (None/0→0, ≤3.9→3, ≤6.9→15, ≤8.9→30, >8.9→50)
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
 ## Architecture
 
@@ -500,6 +529,8 @@ src/ethibench/
     └── statistics.py   # GT coverage statistics
 ```
 
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## Citation
 
 If you use EthiBench, please cite:
@@ -516,9 +547,13 @@ If you use EthiBench, please cite:
 }
 ```
 
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## License
 
 See [LICENSE](LICENSE).
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
 ---
 
