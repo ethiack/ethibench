@@ -1,11 +1,11 @@
 [build-system]
-requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
+requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "ethibench"
 version = "0.1.0"
-description = "Evaluation pipeline for security testing tools against ground truth datasets"
+description = "An evaluation framework for AI pentesting agents"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
@@ -33,6 +33,12 @@ dependencies = [
     "loguru>=0.7",
     "dotenv (>=0.9.9,<0.10.0)",
 ]
+
+[project.urls]
+Homepage = "https://github.com/ethiack/ethibench"
+Repository = "https://github.com/ethiack/ethibench"
+Issues = "https://github.com/ethiack/ethibench/issues"
+Paper = "https://arxiv.org/abs/2605.10834"
 
 [project.scripts]
 ethibench = "ethibench.cli:cli"

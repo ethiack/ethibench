@@ -1,4 +1,4 @@
-"""ethibench — Evaluation pipeline for security testing tools."""
+"""ethibench — An evaluation framework for AI pentesting agents."""
 
 __version__ = "0.1.0"
 

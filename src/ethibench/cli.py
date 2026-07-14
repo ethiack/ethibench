@@ -3,16 +3,42 @@
 import asyncio
 import json
 import sys
+from importlib.metadata import PackageNotFoundError, version as _pkg_version
 from pathlib import Path
 
 import click
 from loguru import logger
+from rich.console import Console
 
 from ethibench.datasets import DatasetCollection
 
 
 # Directory names that are never experiments (infrastructure/output dirs).
 _NON_EXPERIMENT_DIRS = {"aggregated_analysis", "compare_all"}
+
+_BANNER = r"""        __  __    _ __                    __
+  ___  / /_/ /_  (_) /_  ___  ____  _____/ /_
+ / _ \/ __/ __ \/ / __ \/ _ \/ __ \/ ___/ __ \
+/  __/ /_/ / / / / /_/ /  __/ / / / /__/ / / /
+\___/\__/_/ /_/_/_.___/\___/_/ /_/\___/_/ /_/"""
+
+_BANNER_WIDTH = 46
+
+
+def _print_banner() -> None:
+    """Print the EthiBench banner to stderr, only when stderr is a TTY."""
+    if not sys.stderr.isatty():
+        return
+    try:
+        v = _pkg_version("ethibench")
+    except PackageNotFoundError:
+        v = "dev"
+    console = Console(file=sys.stderr, highlight=False, soft_wrap=True)
+    console.print()
+    console.print(_BANNER, style="bold #5EFF88")
+    console.print()
+    console.print(f"{'ethiack.com'.center(_BANNER_WIDTH)}", style="dim")
+    console.print(f"{f'v{v}'.center(_BANNER_WIDTH)}\n", style="dim")
 
 
 def _discover_experiment_dirs(parent_dir: Path) -> list[Path]:
@@ -50,10 +76,13 @@ def _detect_run_dirs(experiment_dir: Path) -> list[Path]:
     return [experiment_dir]
 
 
-@click.group()
-def cli():
-    """ethibench — evaluate security tool findings against ground truth."""
-    pass
+@click.group(invoke_without_command=True)
+@click.pass_context
+def cli(ctx: click.Context) -> None:
+    """EthiBench — an evaluation framework for AI pentesting agents."""
+    _print_banner()
+    if ctx.invoked_subcommand is None:
+        click.echo(ctx.get_help())
 
 
 def _run_single_evaluate(

@@ -1,0 +1,118 @@
+preset: conventionalcommits
+tagFormat: "${version}"
+
+branches:
+  - main
+
+plugins:
+  - "@semantic-release/commit-analyzer"
+  - "@semantic-release/release-notes-generator"
+  - "@semantic-release/changelog"
+  - "@semantic-release/git"
+  - "@semantic-release/github"
+  - "@semantic-release/exec"
+
+verifyConditions:
+  - "@semantic-release/changelog"
+  - "@semantic-release/git"
+  - "@semantic-release/github"
+
+analyzeCommits:
+  - path: "@semantic-release/commit-analyzer"
+    preset: "conventionalcommits"
+    parserOpts:
+      noteKeywords: ['BREAKING', 'BREAKING CHANGE', 'BREAKING CHANGES']
+    releaseRules:
+      - breaking: true
+        release: major
+      - type: build
+        release: patch
+      - type: chore
+        release: false
+      - type: ci
+        release: false
+      - type: docs
+        release: patch
+      - type: feat
+        release: minor
+      - type: fix
+        release: patch
+      - type: perf
+        release: patch
+      - type: refactor
+        release: false
+      - type: revert
+        release: patch
+      - type: style
+        release: false
+      - type: test
+        release: false
+
+generateNotes:
+  - path: "@semantic-release/release-notes-generator"
+    writerOpts:
+      groupBy: type
+      commitGroupsSort: title
+      commitsSort: header
+    linkCompare: true
+    linkReferences: true
+    presetConfig:
+      types:
+        - type: build
+          section: "🏗️ Build"
+          hidden: false
+        - type: chore
+          section: "Other"
+          hidden: false
+        - type: ci
+          section: "🦊 CI/CD"
+          hidden: false
+        - type: docs
+          section: "📔 Docs"
+          hidden: false
+        - type: feat
+          section: "🚀 Features"
+          hidden: false
+        - type: fix
+          section: "🛠 Fixes"
+          hidden: false
+        - type: perf
+          section: "⏩ Performance"
+          hidden: false
+        - type: refactor
+          section: ":scissors: Refactor"
+          hidden: false
+        - type: revert
+          section: "🙅‍♂️ Reverts"
+          hidden: false
+        - type: style
+          section: "💈 Style"
+          hidden: false
+        - type: test
+          section: "🧪 Tests"
+          hidden: false
+
+prepare:
+  - path: "@semantic-release/exec"
+    prepareCmd: |
+      sed -i 's/^version = .*/version = "${nextRelease.version}"/' pyproject.toml
+      poetry lock
+
+  - path: "@semantic-release/changelog"
+    changelogFile: CHANGELOG.md
+
+  - path: "@semantic-release/git"
+    message: "chore(release): release <%= nextRelease.version %> - <%= new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) %> \n\n<%= nextRelease.notes %>"
+    assets:
+      - CHANGELOG.md
+      - pyproject.toml
+      - poetry.lock
+
+publish:
+  - path: "@semantic-release/github"
+
+success:
+  - path: "@semantic-release/github"
+
+fail:
+  - path: "@semantic-release/github"

@@ -1,0 +1,43 @@
+# File: .github/workflows/checks.main-pr.yaml
+name: Checks (PR to main)
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  checks:
+    name: Build Check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Poetry
+        run: pipx install poetry==2.1.4
+
+      - name: Build package
+        run: poetry build
+
+      - name: Verify README is bundled
+        run: |
+          set -euo pipefail
+          # sdist: README lives as an actual file
+          tar -tzf dist/*.tar.gz | grep -qE "/README\.md$" || (echo "README.md missing from sdist"; exit 1)
+          # wheel: README content is embedded in dist-info/METADATA, not as a file
+          python -m zipfile -e dist/*.whl /tmp/wheel-check
+          META=/tmp/wheel-check/*.dist-info/METADATA
+          grep -q "^Description-Content-Type: text/markdown" $META || (echo "wheel METADATA missing markdown description"; exit 1)
+          grep -q "EthiBench" $META || (echo "wheel METADATA does not contain README content"; exit 1)

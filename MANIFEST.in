@@ -1,0 +1,12 @@
+prune experiments
+prune compare_all
+prune matching_experiments
+prune examples
+prune assets
+prune build
+prune dist
+prune .github
+exclude .env.sample
+exclude .gitignore
+exclude .releaserc.yaml
+exclude poetry.lock
