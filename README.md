@@ -531,6 +531,12 @@ src/ethibench/
 
 <p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
+## Contributing
+
+Bug fixes, new agent-report converters, and expert-annotated ground truth for new targets are all welcome. Setup, commit conventions, and scope notes are in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## Citation
 
 If you use EthiBench, please cite:
