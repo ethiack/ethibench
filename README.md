@@ -32,10 +32,21 @@ This repository contains the code for the proposed **adaptable evaluation protoc
 ## Installation
 
 ```bash
-poetry install
+pipx install ethibench       # recommended: isolated env, CLI on PATH
+# or
+pip install ethibench        # if you already manage your own envs
 ```
 
 Requires Python 3.11+ and Poetry installed.
+
+### For development
+
+```bash
+git clone https://github.com/ethiack/ethibench
+cd ethibench
+poetry install
+poetry run ethibench --help
+```
 
 ## Quick Start
 
