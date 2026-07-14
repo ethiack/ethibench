@@ -45,6 +45,18 @@ jobs:
             @semantic-release/exec
             conventional-changelog-conventionalcommits
 
+      - name: Rewrite README image URLs for PyPI
+        if: steps.semantic.outputs.new_release_published == 'true'
+        env:
+          BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ steps.semantic.outputs.new_release_version }}
+        run: |
+          # Only affects the working-tree README used by poetry build;
+          # nothing is committed back to git.
+          sed -i \
+            -e "s|src=\"assets/|src=\"${BASE}/assets/|g" \
+            -e "s|](assets/|](${BASE}/assets/|g" \
+            README.md
+
       - name: Build package
         if: steps.semantic.outputs.new_release_published == 'true'
         run: poetry build
