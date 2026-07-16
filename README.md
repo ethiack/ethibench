@@ -85,6 +85,22 @@ This walkthrough shows how to evaluate an agent's findings against the three ope
 
 Deploy the targets locally (e.g. via Docker) and point your pentesting agent at them. Each agent run should produce a set of findings for each target.
 
+#### ⚠️ Target version alignment
+
+The ground truth in `examples/gt/` was annotated against **specific pinned versions** of the three
+target apps. Two of the upstream repos have since diverged, so **`git clone <latest main>` will not
+reproduce the benchmarked target** for them — use the pinned versions below.
+
+| Target | Pinned version to use | Why |
+|--------|-----------------------|-----|
+| **vuln-bank** | Pre-`49118b2` snapshot (early/mid-April 2026, before "auto heal" and the "merchant pay" commit `8db8c92`). | `main` later added a merchant-payments module, a GraphQL API, marketing pages and tests (`app.py` ~1.7k → ~2.5k lines) — extra attack surface not in the GT. |
+| **PAYGoat** | Commit **`69589b4`** ("Add ticket scenario"), i.e. before "update to v2" (`0cd0077`). | "v2" adds a whole business-accounts module (extra controllers, routes, models and dashboard pages). |
+| **XBEN-090-24** | Latest `main` is fine — the XBEN benchmarks are frozen. | Unchanged upstream. |
+
+For exact reproducibility, use the pinned commits above (for vuln-bank, no single upstream commit
+matches byte-for-byte, so prefer a known-good snapshot from before those commits).
+
+
 ### 2. Organize findings
 
 Place your findings in the expected directory structure. Each target gets its own folder whose **name must match a `target_id`** from the dataset YAML — this is how EthiBench links findings to their ground truth.
