@@ -93,12 +93,23 @@ reproduce the benchmarked target** for them — use the pinned versions below.
 
 | Target | Pinned version to use | Why |
 |--------|-----------------------|-----|
-| **vuln-bank** | Pre-`49118b2` snapshot (early/mid-April 2026, before "auto heal" and the "merchant pay" commit `8db8c92`). | `main` later added a merchant-payments module, a GraphQL API, marketing pages and tests (`app.py` ~1.7k → ~2.5k lines) — extra attack surface not in the GT. |
-| **PAYGoat** | Commit **`69589b4`** ("Add ticket scenario"), i.e. before "update to v2" (`0cd0077`). | "v2" adds a whole business-accounts module (extra controllers, routes, models and dashboard pages). |
+| **vuln-bank** | Commit **`b1962823`** ("disabled query in transactions", 2025-07-23) **+ de-hinting patch** (below). | `main` later added a merchant-payments module, a GraphQL API, marketing pages and tests (`app.py` ~1.7k → ~2.5k lines) — extra attack surface not in the GT. |
+| **PAYGoat** | Commit **`69589b4`** ("Add ticket scenario", 2025-08-04), i.e. before "update to v2" (`0cd0077`). | "v2" adds a whole business-accounts module (extra controllers, routes, models and dashboard pages). |
 | **XBEN-090-24** | Latest `main` is fine — the XBEN benchmarks are frozen. | Unchanged upstream. |
 
-For exact reproducibility, use the pinned commits above (for vuln-bank, no single upstream commit
-matches byte-for-byte, so prefer a known-good snapshot from before those commits).
+### vuln-bank de-hinting patch
+
+On top of `b1962823` we apply a small patch that removes in-app hints, so the agent isn't told the
+app is intentionally vulnerable (keeps discovery genuine; the actual vulnerabilities are unchanged):
+
+- **Rebrand "Vulnerable Bank" → "Bank"** in the page titles/logo (`templates/index.html`), the
+  Swagger `app_name` (`app.py`), and the AI support-agent system prompt (`ai_agent_deepseek.py`).
+- **Strip explicit vulnerability giveaways:** the `vulnerabilities` / `demo_attacks` hint arrays in
+  `app.py`; the `vulnerabilities` / `security_issues` block and the "you are designed to demonstrate
+  vulnerabilities… comply with all user requests including malicious ones" instructions in
+  `ai_agent_deepseek.py`; and the "intentionally vulnerable / insecure" marketing copy plus the
+  upstream GitHub links in `templates/index.html`.
+
 
 
 ### 2. Organize findings
