@@ -539,11 +539,43 @@ evaluation_outputs/cumulative-analysis/
 
 <p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
+### `ethibench temporal`
+
+Generates a temporal evaluation plot showing how findings accumulate over elapsed time. Requires that findings include a `timestamp` field and that `ethibench evaluate` has already been run.
+
+```bash
+ethibench temporal <experiment_dir> --dataset <dataset.yaml> [options]
+```
+
+**Arguments:**
+- `experiment_dir` — Experiment directory (with `run_*` subdirectories or a single run).
+
+**Options:**
+- `--dataset, -d` — (required) Path to dataset YAML file.
+- `--gt-dir, -g` — Ground truth directory. Defaults to `gt/` next to the dataset YAML.
+- `--output, -o` — Output PNG path. Defaults to `evaluation_outputs/plots/temporal_evaluation.png`.
+
+**What it does:**
+
+Produces a 4×N subplot figure (4 metric rows × N target columns) showing cumulative metrics over elapsed time for each run:
+- **True Positives** — cumulative TP count over time.
+- **False Positives** — cumulative FP count over time.
+- **Severity Score** — cumulative CVSS-weighted severity points.
+- **CWE Coverage** — number of unique CWEs discovered over time.
+
+**Timestamp handling:**
+- Findings without a `timestamp` field are skipped with a warning indicating the count and affected targets.
+- If entire runs lack timestamps, they are excluded from the plot.
+- If no finding in any run has a timestamp, the command exits with an error.
+- Start time is read from `metrics.json`; if unavailable, the earliest finding timestamp is used as t=0.
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## Architecture
 
 ```
 src/ethibench/
-├── cli.py              # Click CLI entry points (evaluate, convert-report, analyze, compare)
+├── cli.py              # Click CLI entry points (evaluate, convert-report, analyze, compare, temporal)
 ├── config.py           # Environment variable configuration
 ├── models.py           # Pydantic data models
 ├── datasets.py         # Dataset/target YAML management
@@ -553,6 +585,7 @@ src/ethibench/
 ├── metrics.py          # Per-target cost/token/duration metrics
 ├── convert_report.py   # Report → findings conversion
 ├── cumulative_analysis.py  # Cross-run cumulative analysis + overlap
+├── temporal.py         # Temporal evaluation (cumulative metrics over time)
 ├── pairwise.py         # Pairwise A/B statistical comparison (t-test, Cohen's d)
 ├── plots.py            # PNG chart generation (eval, cumulative, comparison)
 ├── report.py           # Markdown summary generation

@@ -770,3 +770,57 @@ def compare(experiment_dirs: tuple[Path, ...], output_dir: Path, parent_dir: Pat
         logger.info(f"Pairwise comparison written to {output_dir / 'pairwise_comparison.md'}")
 
     logger.info(f"Comparison complete. Results in {output_dir}")
+
+
+@cli.command()
+@click.argument(
+    "experiment_dir",
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+)
+@click.option(
+    "--dataset",
+    "-d",
+    required=True,
+    type=click.Path(exists=True, path_type=Path),
+    help="Dataset YAML file.",
+)
+@click.option(
+    "--gt-dir",
+    "-g",
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    default=None,
+    help="Ground truth directory. Defaults to gt/ next to dataset YAML.",
+)
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(path_type=Path),
+    default=None,
+    help="Output PNG path. Defaults to evaluation_outputs/plots/temporal_evaluation.png.",
+)
+def temporal(
+    experiment_dir: Path,
+    dataset: Path,
+    gt_dir: Path | None,
+    output: Path | None,
+):
+    """Generate a temporal evaluation plot for EXPERIMENT_DIR.
+
+    Shows cumulative true positives, false positives, severity score, and CWE
+    coverage over elapsed time for each target across runs.  Requires that
+    ``ethibench evaluate`` has already been run on the experiment.
+
+    Findings without a ``timestamp`` field are skipped with a warning.
+    """
+    from ethibench.temporal import run_temporal_evaluation
+
+    dc = DatasetCollection()
+    dc.init_from_yaml(dataset)
+
+    if gt_dir is None:
+        gt_dir = dataset.parent / "gt"
+        if not gt_dir.is_dir():
+            logger.error(f"No gt/ directory found next to {dataset}. Pass --gt-dir explicitly.")
+            sys.exit(1)
+
+    run_temporal_evaluation(experiment_dir, dc, gt_dir, output_path=output)
