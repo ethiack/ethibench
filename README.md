@@ -328,6 +328,75 @@ ethibench compare exp-extra/ --parent-dir all-experiments/ --output-dir comparis
 
 <p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
+### `ethibench temporal`
+
+Generates a temporal evaluation plot showing how findings accumulate over elapsed time. Requires that findings include a `timestamp` field and that `ethibench evaluate` has already been run.
+
+```bash
+ethibench temporal <experiment_dir> --dataset <dataset.yaml> [options]
+```
+
+**Arguments:**
+- `experiment_dir` — Experiment directory (with `run_*` subdirectories or a single run).
+
+**Options:**
+- `--dataset, -d` — (required) Path to dataset YAML file.
+- `--gt-dir, -g` — Ground truth directory. Defaults to `gt/` next to the dataset YAML.
+- `--output, -o` — Output PNG path. Defaults to `evaluation_outputs/plots/temporal_evaluation.png`.
+
+**What it does:**
+
+Produces a 4×N subplot figure (4 metric rows × N target columns) showing cumulative metrics over elapsed time for each run:
+- **True Positives** — cumulative TP count over time.
+- **False Positives** — cumulative FP count over time.
+- **Severity Score** — cumulative CVSS-weighted severity points.
+- **CWE Coverage** — number of unique CWEs discovered over time.
+
+**Timestamp handling:**
+- Findings without a `timestamp` field are skipped with a warning indicating the count and affected targets.
+- If entire runs lack timestamps, they are excluded from the plot.
+- If no finding in any run has a timestamp, the command exits with an error.
+- Start time is read from `metrics.json`; if unavailable, the earliest finding timestamp is used as t=0.
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
+### `ethibench subset`
+
+Finds the subset of targets whose F1 score best correlates with the full benchmark, subject to a cost constraint. Useful for selecting a reduced evaluation suite that is cheaper to run while still being representative. No LLM API calls are made — only pre-computed evaluation results are used.
+
+```bash
+# Find subset costing at most 50% of the full benchmark
+ethibench subset --parent-dir experiments/ --dataset examples/dataset.yaml --max-ratio 0.5
+
+# Use Spearman correlation instead of Pearson
+ethibench subset -p experiments/ -d examples/dataset.yaml -r 0.5 -m spearman
+```
+
+**Options:**
+- `--parent-dir, -p` — (required) Parent folder containing experiment directories (each with `evaluation_outputs/`).
+- `--dataset, -d` — (required) Path to dataset YAML file.
+- `--metric, -m` — Correlation metric: `pearson` (default) or `spearman`.
+- `--max-ratio, -r` — (required) Maximum cost ratio threshold (0–1]. The selected subset's average cost must not exceed this fraction of the full benchmark cost.
+
+**What it does:**
+
+1. Discovers all experiments in the parent directory that have evaluation outputs.
+2. For each experiment, loads per-target TP/FP/FN from averaged results and per-target cost from `metrics_summary.json`.
+3. Enumerates all possible target subsets and computes the F1 score of each subset across experiments.
+4. Selects the subset with the highest correlation (Pearson or Spearman) to the full benchmark F1, subject to the cost ratio constraint.
+5. Prints the selected targets, correlation value, and cost breakdown.
+
+**Requirements:**
+- `ethibench evaluate` must have been run on all experiments.
+- Each experiment needs a `metrics_summary.json` with per-target cost data.
+- At least 3 experiments are recommended for reliable correlation estimates (a warning is shown otherwise).
+
+**Notes:**
+- With more than 15 targets, the exhaustive enumeration may be slow (2^N subsets). A warning is shown in this case.
+- Cost ratio is computed as: `average_subset_cost / average_full_benchmark_cost` across experiments.
+
+<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
+
 ## File Formats
 
 ### Findings (`findings.jsonl`)
@@ -539,43 +608,11 @@ evaluation_outputs/cumulative-analysis/
 
 <p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
 
-### `ethibench temporal`
-
-Generates a temporal evaluation plot showing how findings accumulate over elapsed time. Requires that findings include a `timestamp` field and that `ethibench evaluate` has already been run.
-
-```bash
-ethibench temporal <experiment_dir> --dataset <dataset.yaml> [options]
-```
-
-**Arguments:**
-- `experiment_dir` — Experiment directory (with `run_*` subdirectories or a single run).
-
-**Options:**
-- `--dataset, -d` — (required) Path to dataset YAML file.
-- `--gt-dir, -g` — Ground truth directory. Defaults to `gt/` next to the dataset YAML.
-- `--output, -o` — Output PNG path. Defaults to `evaluation_outputs/plots/temporal_evaluation.png`.
-
-**What it does:**
-
-Produces a 4×N subplot figure (4 metric rows × N target columns) showing cumulative metrics over elapsed time for each run:
-- **True Positives** — cumulative TP count over time.
-- **False Positives** — cumulative FP count over time.
-- **Severity Score** — cumulative CVSS-weighted severity points.
-- **CWE Coverage** — number of unique CWEs discovered over time.
-
-**Timestamp handling:**
-- Findings without a `timestamp` field are skipped with a warning indicating the count and affected targets.
-- If entire runs lack timestamps, they are excluded from the plot.
-- If no finding in any run has a timestamp, the command exits with an error.
-- Start time is read from `metrics.json`; if unavailable, the earliest finding timestamp is used as t=0.
-
-<p align="right"><small>(<a href="#readme-top">back to top</a>)</small></p>
-
 ## Architecture
 
 ```
 src/ethibench/
-├── cli.py              # Click CLI entry points (evaluate, convert-report, analyze, compare, temporal)
+├── cli.py              # Click CLI entry points (evaluate, convert-report, analyze, compare, temporal, subset)
 ├── config.py           # Environment variable configuration
 ├── models.py           # Pydantic data models
 ├── datasets.py         # Dataset/target YAML management
@@ -586,6 +623,7 @@ src/ethibench/
 ├── convert_report.py   # Report → findings conversion
 ├── cumulative_analysis.py  # Cross-run cumulative analysis + overlap
 ├── temporal.py         # Temporal evaluation (cumulative metrics over time)
+├── subset.py           # Reduced-suite selection via F1 correlation
 ├── pairwise.py         # Pairwise A/B statistical comparison (t-test, Cohen's d)
 ├── plots.py            # PNG chart generation (eval, cumulative, comparison)
 ├── report.py           # Markdown summary generation

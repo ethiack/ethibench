@@ -824,3 +824,119 @@ def temporal(
             sys.exit(1)
 
     run_temporal_evaluation(experiment_dir, dc, gt_dir, output_path=output)
+
+
+@cli.command()
+@click.option(
+    "--parent-dir",
+    "-p",
+    required=True,
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    help="Parent folder containing experiment directories (each with evaluation_outputs/).",
+)
+@click.option(
+    "--dataset",
+    "-d",
+    required=True,
+    type=click.Path(exists=True, path_type=Path),
+    help="Dataset YAML file.",
+)
+@click.option(
+    "--metric",
+    "-m",
+    type=click.Choice(["pearson", "spearman"], case_sensitive=False),
+    default="pearson",
+    help="Correlation metric to use.",
+)
+@click.option(
+    "--max-ratio",
+    "-r",
+    required=True,
+    type=click.FloatRange(min=0.0, max=1.0, min_open=True),
+    help="Maximum cost ratio threshold (0–1]. The selected subset's average cost "
+    "must not exceed this fraction of the full benchmark cost.",
+)
+def subset(parent_dir: Path, dataset: Path, metric: str, max_ratio: float):
+    """Find the target subset with highest F1 correlation to the full benchmark.
+
+    Enumerates all possible subsets of targets defined in the dataset YAML and
+    selects the one whose F1 score (across experiments) correlates best with
+    the full benchmark F1, subject to a cost ratio constraint.
+
+    Requires that ``ethibench evaluate`` has already been run on the experiments.
+    No LLM API calls are made — only pre-computed results are used.
+    """
+    from ethibench.subset import find_best_subset, load_all_experiments
+
+    dc = DatasetCollection()
+    dc.init_from_yaml(dataset)
+
+    experiment_dirs = _discover_experiment_dirs(parent_dir)
+    if not experiment_dirs:
+        logger.error(
+            f"No experiment directories found in {parent_dir}. "
+            "Subdirectories must contain an evaluation_outputs/ folder."
+        )
+        sys.exit(1)
+
+    logger.info(f"Found {len(experiment_dirs)} experiment(s) in {parent_dir}")
+
+    per_target_data, avg_costs, labels = load_all_experiments(experiment_dirs, dc)
+
+    if len(labels) < 3:
+        logger.warning(
+            f"Only {len(labels)} experiment(s) with valid data. "
+            "Correlation estimates may be unreliable with fewer than 3 data points."
+        )
+
+    if not per_target_data:
+        logger.error("No valid evaluation data found across experiments.")
+        sys.exit(1)
+
+    # Verify all targets have the same number of observations
+    counts = {tid: len(v) for tid, v in per_target_data.items()}
+    expected = len(labels)
+    missing = {tid for tid, c in counts.items() if c != expected}
+    if missing:
+        logger.warning(
+            f"Targets {missing} have inconsistent data across experiments — "
+            "dropping them from the analysis."
+        )
+        for tid in missing:
+            del per_target_data[tid]
+
+    if not per_target_data:
+        logger.error("No targets with consistent data across all experiments.")
+        sys.exit(1)
+
+    if not avg_costs:
+        logger.error(
+            "No cost data available. Each experiment needs a "
+            "metrics_summary.json file with a 'per_target' section containing "
+            "'total_cost' for each target. Run 'ethibench evaluate' first."
+        )
+        sys.exit(1)
+
+    best = find_best_subset(per_target_data, avg_costs, max_ratio, metric)
+
+    if best is None:
+        logger.error(
+            f"No subset found within cost ratio {max_ratio:.2f}. "
+            "Try increasing --max-ratio."
+        )
+        sys.exit(1)
+
+    # Print results
+    click.echo()
+    click.echo("=== Subset selection ===")
+    click.echo(f"Experiments used:      {len(labels)}")
+    click.echo(f"Correlation metric:    {best['metric']}")
+    click.echo(f"Correlation:           {best['correlation']:.4f}")
+    click.echo(f"Full benchmark cost:   {best['full_cost']:.4f}")
+    click.echo(f"Subset cost:           {best['subset_cost']:.4f}")
+    click.echo(f"Cost ratio:            {best['cost_ratio']:.4f}")
+    click.echo(f"Max allowed ratio:     {max_ratio:.4f}")
+    click.echo()
+    click.echo("Selected targets:")
+    for t in best["subset"]:
+        click.echo(f"  - {t}")
