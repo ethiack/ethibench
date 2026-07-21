@@ -35,7 +35,8 @@ jobs:
         run: |
           set -euo pipefail
           # sdist: README lives as an actual file
-          tar -tzf dist/*.tar.gz | grep -qE "/README\.md$" || (echo "README.md missing from sdist"; exit 1)
+          tar -tzf dist/*.tar.gz > /tmp/sdist-listing
+          grep -qE "/README\.md$" /tmp/sdist-listing || (echo "README.md missing from sdist"; exit 1)
           # wheel: README content is embedded in dist-info/METADATA, not as a file
           python -m zipfile -e dist/*.whl /tmp/wheel-check
           META=/tmp/wheel-check/*.dist-info/METADATA
