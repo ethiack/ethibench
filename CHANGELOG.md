@@ -1,3 +1,5 @@
+## [1.1.2](https://github.com/ethiack/ethibench/compare/1.1.1...1.1.2) (2026-07-22)
+
 ## [1.1.1](https://github.com/ethiack/ethibench/compare/1.1.0...1.1.1) (2026-07-22)
 
 ## [1.1.0](https://github.com/ethiack/ethibench/compare/1.0.8...1.1.0) (2026-07-21)
